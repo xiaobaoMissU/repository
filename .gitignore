@@ -3,3 +3,5 @@
 **/.project
 **/.settings
 frontend/.idea/
+quickStart/node_modules/
+quickStart/.idea/
