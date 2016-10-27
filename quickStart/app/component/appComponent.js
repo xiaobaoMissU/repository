@@ -12,11 +12,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by PC-ZB on 2016/10/26.
  */
 var core_1 = require('@angular/core');
-var Hero = (function () {
-    function Hero() {
-    }
-    return Hero;
-}());
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tour Of Heroes';
@@ -35,7 +30,7 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'appRoot',
             styleUrls: ['app/css/heros.css'],
-            template: "<h1>{{title}}</h1>\n        <h2>My Heros\uFF1A</h2>\n        <ul class=\"heroes\">\n            <li (click)=\"onSelect(hero)\" [class.selected]=\"hero === selectedHero\" *ngFor=\"let hero of heros\"><span class=\"badge\">{{hero.id}}</span><span>{{hero.name}}</span></li>\n        </ul>\n        <div *ngIf=\"selectedHero\">\n            <h2>{{selectedHero.name}} Details:</h2>\n            <div><label>id:</label>{{selectedHero.id}}</div>\n            <div><label>name:</label><input [(ngModel)]=\"selectedHero.name\"></div>\n        </div>\n         "
+            template: "<h1>{{title}}</h1>\n        <h2>My Heros\uFF1A</h2>\n        <ul class=\"heroes\">\n            <li (click)=\"onSelect(hero)\" [class.selected]=\"hero === selectedHero\" *ngFor=\"let hero of heros\"><span class=\"badge\">{{hero.id}}</span><span>{{hero.name}}</span></li>\n        </ul>\n        <hero-detail *ngIf=\"selectedHero\" [hero]=\"selectedHero\"></hero-detail>\n         "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

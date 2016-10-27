@@ -9,24 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /**
- * Created by PC-ZB on 2016/10/26.
+ * Created by PC-ZB on 2016/10/27.
  */
 var core_1 = require('@angular/core');
-var forms_1 = require('@angular/forms');
-var platform_browser_1 = require('@angular/platform-browser');
-var appComponent_1 = require('../component/appComponent');
-var heroDetailComponent_1 = require('../component/herodetail/heroDetailComponent');
-var AppModule = (function () {
-    function AppModule() {
+var HeroModel_1 = require('/app/model/HeroModel');
+var HeroDetailComponent = (function () {
+    function HeroDetailComponent() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [appComponent_1.AppComponent, heroDetailComponent_1.HeroDetailComponent],
-            bootstrap: [appComponent_1.AppComponent]
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', (typeof (_a = typeof HeroModel_1.Hero !== 'undefined' && HeroModel_1.Hero) === 'function' && _a) || Object)
+    ], HeroDetailComponent.prototype, "hero", void 0);
+    HeroDetailComponent = __decorate([
+        core_1.Component({
+            selector: 'hero-detail',
+            template: "<h2>{{hero.name}} Details:</h2>\n         <div><label>id:</label>{{hero.id}}</div>\n         <div><label>name:</label><input [(ngModel)]=\"hero.name\"></div>\n        "
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], HeroDetailComponent);
+    return HeroDetailComponent;
+    var _a;
 }());
-exports.AppModule = AppModule;
+exports.HeroDetailComponent = HeroDetailComponent;
