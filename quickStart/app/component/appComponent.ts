@@ -2,7 +2,7 @@
  * Created by PC-ZB on 2016/10/26.
  */
 import { Component } from  '@angular/core';
-import { Hero } from '/app/model/HeroModel';
+import { Hero } from '../model/HeroModel';
 import { HeroDetailComponent } from './herodetail/heroDetailComponent';
 
 

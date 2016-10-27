@@ -2,7 +2,7 @@
  * Created by PC-ZB on 2016/10/27.
  */
 import { Component,Input } from '@angular/core';
-import { Hero } from '/app/model/HeroModel';
+import { Hero } from '../../model/HeroModel';
 
 @Component({
     selector:'hero-detail',
