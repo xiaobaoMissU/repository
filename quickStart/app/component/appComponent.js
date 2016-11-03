@@ -15,22 +15,11 @@ var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tour Of Heroes';
-        this.heros = [
-            { id: 1, name: 'heroA' },
-            { id: 2, name: 'heroB' },
-            { id: 3, name: 'heroC' },
-            { id: 4, name: 'heroD' },
-            { id: 5, name: 'heroE' }
-        ];
     }
-    AppComponent.prototype.onSelect = function (hero) {
-        this.selectedHero = hero;
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'appRoot',
-            styleUrls: ['app/css/heros.css'],
-            template: "<h1>{{title}}</h1>\n        <h2>My Heros\uFF1A</h2>\n        <ul class=\"heroes\">\n            <li (click)=\"onSelect(hero)\" [class.selected]=\"hero === selectedHero\" *ngFor=\"let hero of heros\"><span class=\"badge\">{{hero.id}}</span><span>{{hero.name}}</span></li>\n        </ul>\n        <hero-detail *ngIf=\"selectedHero\" [hero]=\"selectedHero\"></hero-detail>\n         "
+            template: "\n        <h1>{{title}}</h1>\n        <myHeroes></myHeroes>\n         "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

@@ -6,11 +6,14 @@ import { FormsModule }   from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent} from  '../component/appComponent';
 import { HeroDetailComponent } from '../component/herodetail/heroDetailComponent';
+import { HeroComponent } from '../component/hero/heroComponent';
+import { HeroService } from '../service/heroService';
 
 @NgModule({
     imports:    [BrowserModule,FormsModule],
-    declarations:   [AppComponent,HeroDetailComponent],
-    bootstrap:  [AppComponent]
+    declarations:   [AppComponent,HeroComponent,HeroDetailComponent],
+    bootstrap:  [AppComponent],
+    providers:  [HeroService]
 })
 
 export  class AppModule{  }

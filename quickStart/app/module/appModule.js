@@ -16,14 +16,17 @@ var forms_1 = require('@angular/forms');
 var platform_browser_1 = require('@angular/platform-browser');
 var appComponent_1 = require('../component/appComponent');
 var heroDetailComponent_1 = require('../component/herodetail/heroDetailComponent');
+var heroComponent_1 = require('../component/hero/heroComponent');
+var heroService_1 = require('../service/heroService');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [appComponent_1.AppComponent, heroDetailComponent_1.HeroDetailComponent],
-            bootstrap: [appComponent_1.AppComponent]
+            declarations: [appComponent_1.AppComponent, heroComponent_1.HeroComponent, heroDetailComponent_1.HeroDetailComponent],
+            bootstrap: [appComponent_1.AppComponent],
+            providers: [heroService_1.HeroService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
