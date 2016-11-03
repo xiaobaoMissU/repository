@@ -21,7 +21,7 @@ export class HeroComponent implements OnInit{
 
     private selectedHero:Hero;
     private heroService:HeroService;
-    public heroes:Hero[];
+    private heroes:Hero[];
     private abstract:any;
 
     constructor(heroService:HeroService){

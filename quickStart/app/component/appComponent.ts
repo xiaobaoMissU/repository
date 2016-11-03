@@ -9,7 +9,8 @@ import { Hero } from '../model/heroModel';
     template:
         `
         <h1>{{title}}</h1>
-        <myHeroes></myHeroes>
+        <a routerLink="/hero">英雄列表</a>&nbsp;&nbsp;<a routerLink="/dashboard">仪表盘</a>
+        <router-outlet></router-outlet>
          `
 })
 export class AppComponent{

@@ -9,20 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /**
- * Created by PC-ZB on 2016/10/26.
+ * Created by PC-ZB on 2016/11/3.
  */
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Tour Of Heroes';
+var heroService_1 = require('../../service/heroService');
+var Dashboard = (function () {
+    function Dashboard(heroService) {
+        this.heroService = heroService;
     }
-    AppComponent = __decorate([
+    Dashboard.prototype.ngOnInit = function () {
+        var _this = this;
+        this.heroService.getHeroes().then(function (heroes) { return _this.topHeroes = heroes.slice(0, 3); });
+    };
+    Dashboard = __decorate([
         core_1.Component({
-            selector: 'appRoot',
-            template: "\n        <h1>{{title}}</h1>\n        <a routerLink=\"/hero\">\u82F1\u96C4\u5217\u8868</a>&nbsp;&nbsp;<a routerLink=\"/dashboard\">\u4EEA\u8868\u76D8</a>\n        <router-outlet></router-outlet>\n         "
+            selector: 'dashboard',
+            template: "\n        <h3>\u6211\u7684\u4EEA\u8868\u76D8</h3>\n        <div *ngFor=\"let hero of topHeroes\">\n            {{hero.name}}\n        </div>\n    "
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [heroService_1.HeroService])
+    ], Dashboard);
+    return Dashboard;
 }());
-exports.AppComponent = AppComponent;
+exports.Dashboard = Dashboard;
