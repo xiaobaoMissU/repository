@@ -27,7 +27,7 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, router_1.RouterModule.forRoot(routerConig_1.RouterConfig)],
-            declarations: [appComponent_1.AppComponent, heroComponent_1.HeroComponent, heroDetailComponent_1.HeroDetailComponent, dashboardComponent_1.Dashboard],
+            declarations: [appComponent_1.AppComponent, heroComponent_1.HeroComponent, heroDetailComponent_1.HeroDetailComponent, dashboardComponent_1.DashboardComponent],
             bootstrap: [appComponent_1.AppComponent],
             providers: [heroService_1.HeroService]
         }), 

@@ -12,9 +12,9 @@ import { Hero } from '../../model/heroModel';
         `
         <h2>My Heros:</h2>
         <ul class="heroes">
-            <li (click)="onSelect(hero)" [class.selected]="hero === selectedHero" *ngFor="let hero of heroes"><span class="badge">{{hero.id}}</span><span>{{hero.name}}</span></li>
+            <li routerLink="/detail/{{hero.id}}" [class.selected]="hero === selectedHero" *ngFor="let hero of heroes"><span class="badge">{{hero.id}}</span><span>{{hero.name}}</span></li>
         </ul>
-        <hero-detail *ngIf="selectedHero" [hero]="selectedHero"></hero-detail>
+
          `
 })
 export class HeroComponent implements OnInit{

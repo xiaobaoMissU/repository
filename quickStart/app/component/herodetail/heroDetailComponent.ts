@@ -3,17 +3,33 @@
  */
 import { Component,Input } from '@angular/core';
 import { Hero } from '../../model/heroModel';
+import { HeroService } from '../../service/heroService';
+import { ActivatedRoute , Params } from '@angular/router';
+import { OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
     selector:'hero-detail',
-    template:
-        `<h2>{{hero.name}} Details:</h2>
-         <div><label>id:</label>{{hero.id}}</div>
-         <div><label>name:</label><input [(ngModel)]="hero.name"></div>
-        `
+    styleUrls:['app/css/herodetail.css'],
+    templateUrl:'app/template/heroDetailComponentTemp.html'
 })
-export class HeroDetailComponent{
+export class HeroDetailComponent implements OnInit {
 
-    @Input()
-    hero:Hero;
+    constructor(private heroService:HeroService,private route: ActivatedRoute,private location:Location){ }
+    private abstract:any;
+    private hero:Hero;
+
+    ngOnInit():void{
+        //console.log(this.route.params._value.id);
+        this.route.params.forEach((param:Params)=>{
+            let id = param['id'];
+            this.heroService.getHeroById(id).then(hero=>{
+               this.hero = hero;
+            });
+        })
+    }
+
+    private goBack():void{
+        this.location.back();
+    }
 }

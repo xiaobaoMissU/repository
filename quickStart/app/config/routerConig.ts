@@ -2,7 +2,8 @@
  * Created by PC-ZB on 2016/11/3.
  */
 import { HeroComponent } from '../component/hero/heroComponent';
-import { Dashboard } from '../component/dashboard/dashboardComponent';
+import { HeroDetailComponent } from '../component/herodetail/heroDetailComponent';
+import { DashboardComponent } from '../component/dashboard/dashboardComponent';
 export const RouterConfig = [
     {
         path:'',
@@ -12,7 +13,10 @@ export const RouterConfig = [
         path:'hero',
         component:HeroComponent
     },{
+        path:'detail/:id',
+        component:HeroDetailComponent
+    },{
         path:'dashboard',
-        component:Dashboard
+        component:DashboardComponent
     }
 ]

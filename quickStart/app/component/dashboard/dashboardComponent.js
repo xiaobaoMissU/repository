@@ -13,21 +13,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  */
 var core_1 = require('@angular/core');
 var heroService_1 = require('../../service/heroService');
-var Dashboard = (function () {
-    function Dashboard(heroService) {
+var router_1 = require('@angular/router');
+var DashboardComponent = (function () {
+    function DashboardComponent(heroService, router) {
         this.heroService = heroService;
+        this.router = router;
     }
-    Dashboard.prototype.ngOnInit = function () {
+    DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.heroService.getHeroes().then(function (heroes) { return _this.topHeroes = heroes.slice(0, 3); });
     };
-    Dashboard = __decorate([
+    DashboardComponent.prototype.gotoDetail = function (hero) {
+        var link = ['/detail', hero.id];
+        this.router.navigate(link);
+    };
+    DashboardComponent = __decorate([
         core_1.Component({
             selector: 'dashboard',
-            template: "\n        <h3>\u6211\u7684\u4EEA\u8868\u76D8</h3>\n        <div *ngFor=\"let hero of topHeroes\">\n            {{hero.name}}\n        </div>\n    "
+            styleUrls: ['app/css/dashboard.css'],
+            templateUrl: 'app/template/dashboardComponentTemp.html'
         }), 
-        __metadata('design:paramtypes', [heroService_1.HeroService])
-    ], Dashboard);
-    return Dashboard;
+        __metadata('design:paramtypes', [heroService_1.HeroService, router_1.Router])
+    ], DashboardComponent);
+    return DashboardComponent;
 }());
-exports.Dashboard = Dashboard;
+exports.DashboardComponent = DashboardComponent;

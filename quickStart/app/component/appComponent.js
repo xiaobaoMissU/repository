@@ -19,7 +19,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'appRoot',
-            template: "\n        <h1>{{title}}</h1>\n        <a routerLink=\"/hero\">\u82F1\u96C4\u5217\u8868</a>&nbsp;&nbsp;<a routerLink=\"/dashboard\">\u4EEA\u8868\u76D8</a>\n        <router-outlet></router-outlet>\n         "
+            styleUrls: ['app/css/appcomponent.css'],
+            template: "\n        <h1>{{title}}</h1>\n        <nav><a routerLink=\"/hero\">\u82F1\u96C4\u5217\u8868</a>&nbsp;&nbsp;<a routerLink=\"/dashboard\">\u4EEA\u8868\u76D8</a></nav>\n        <router-outlet></router-outlet>\n         "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

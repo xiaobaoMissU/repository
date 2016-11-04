@@ -28,7 +28,7 @@ var HeroComponent = (function () {
         core_1.Component({
             selector: 'myHeroes',
             styleUrls: ['app/css/heros.css'],
-            template: "\n        <h2>My Heros:</h2>\n        <ul class=\"heroes\">\n            <li (click)=\"onSelect(hero)\" [class.selected]=\"hero === selectedHero\" *ngFor=\"let hero of heroes\"><span class=\"badge\">{{hero.id}}</span><span>{{hero.name}}</span></li>\n        </ul>\n        <hero-detail *ngIf=\"selectedHero\" [hero]=\"selectedHero\"></hero-detail>\n         "
+            template: "\n        <h2>My Heros:</h2>\n        <ul class=\"heroes\">\n            <li routerLink=\"/detail/{{hero.id}}\" [class.selected]=\"hero === selectedHero\" *ngFor=\"let hero of heroes\"><span class=\"badge\">{{hero.id}}</span><span>{{hero.name}}</span></li>\n        </ul>\n\n         "
         }), 
         __metadata('design:paramtypes', [heroService_1.HeroService])
     ], HeroComponent);
